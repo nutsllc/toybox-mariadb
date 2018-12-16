@@ -14,7 +14,7 @@ if [ -n "${TOYBOX_UID}" ] && ! cat /etc/passwd | awk 'BEGIN{ FS= ":" }{ print $3
     echo "UID of ${user} has been changed."
 fi
 
-mariadb_conf='/etc/mysql/conf.d/mariadb.cnf'
+mariadb_conf='/etc/mysql/mariadb.cnf'
 sed -i -e "s:^#default-character-set:default-character-set:" ${mariadb_conf}
 sed -i -e "s:^#character-set-server:character-set-server:" ${mariadb_conf}
 sed -i -e "s:^#collation-server:collation-server:" ${mariadb_conf}
